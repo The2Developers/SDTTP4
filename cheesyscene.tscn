@@ -1,10 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://images/wood 3.png" type="Texture" id=1]
+[ext_resource path="res://Textures/wood 3.png" type="Texture" id=1]
 [ext_resource path="res://woodmesh.tres" type="CubeMesh" id=2]
 
-
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=1]
 
 background_mode = 0
 background_sky_custom_fov = 0.0
@@ -83,7 +82,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Ambient Light" ]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=2]
 
 render_priority = 0
 flags_transparent = false
@@ -141,15 +140,15 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Clearcoat" ]
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=3]
 
-material = SubResource( 3 )
+material = SubResource( 2 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=4]
 
 render_priority = 0
 flags_transparent = false
@@ -203,7 +202,7 @@ distance_fade_enable = false
 
 [sub_resource type="CubeMesh" id=5]
 
-material = SubResource( 1 )
+material = SubResource( 4 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -211,7 +210,7 @@ subdivide_depth = 0
 
 [sub_resource type="CubeMesh" id=6]
 
-material = SubResource( 1 )
+material = SubResource( 4 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -221,7 +220,7 @@ subdivide_depth = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 
-environment = SubResource( 2 )
+environment = SubResource( 1 )
 
 [node name="ground" type="MeshInstance" parent="." index="1"]
 
@@ -235,7 +234,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 
